@@ -9,9 +9,10 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
-// List all users data111
+// List all users data111 7777
 app.get("/users", (req: Request, res: Response) => {
   res.json(getUsers());
+  console.log("Listed all users");
 });
 
 // Create a new user
