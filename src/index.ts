@@ -4,7 +4,7 @@ import { User } from "./types";
 import { getUsers, addUser } from "./store";
 
 const app = express();
-const PORT = 3000;
+const PORT = 3003;
 
 app.use(cors());
 app.use(express.json());
