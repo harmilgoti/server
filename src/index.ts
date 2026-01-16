@@ -9,7 +9,7 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
-// List all users data
+// List all users data111
 app.get("/users", (req: Request, res: Response) => {
   res.json(getUsers());
 });
