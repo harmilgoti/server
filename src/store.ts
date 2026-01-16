@@ -3,9 +3,9 @@ import { User } from "./types";
 // In-memory store
 const users: User[] = [];
 
-export const getUsers = (): { localData1233: User[]; total: number } => {
+export const getUsers = (): { data: User[]; total: number } => {
   return {
-    localData1233: users,
+    data: users,
     total: users.length,
   };
 };
