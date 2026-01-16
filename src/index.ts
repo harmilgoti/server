@@ -12,7 +12,7 @@ app.use(express.json());
 // List all users data111 7777
 app.get("/users", (req: Request, res: Response) => {
   res.json(getUsers());
-  console.log("Listed all users");
+  console.log("Listed all users data");
 });
 
 // Create a new user
