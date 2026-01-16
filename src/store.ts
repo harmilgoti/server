@@ -5,7 +5,7 @@ const users: User[] = [];
 
 export const getUsers = (): any => {
   // Reverted to return User[] for simplicity
-  const data22 = 123;
+  const eeeeeeeeeeee = 123;
   return users;
 };
 
