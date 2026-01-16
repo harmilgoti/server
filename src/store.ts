@@ -5,7 +5,7 @@ const users: User[] = [];
 
 export const getUsers = (): { values: User[]; total: number } => {
   return {
-    values: users,
+    app: users,
     total: users.length,
   };
 };
