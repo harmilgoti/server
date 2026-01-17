@@ -42,6 +42,6 @@ export const getUser = (req: Request, res: Response) => {
 
     res.json({
         success: true,
-        data: user,
+        value: user,
     });
 };
