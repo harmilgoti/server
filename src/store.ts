@@ -3,7 +3,7 @@ import { User } from "./types";
 // In-memory store
 const users: User[] = [];
 
-export const getUsers = (): any => {
+export const getUsersdddd = (): any => {
   // Reverted to return User[] for simplicity
   const eeeeeeeeeeee = 123;
   return {
