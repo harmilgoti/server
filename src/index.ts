@@ -1,38 +1,43 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import cors from "cors";
-import { User } from "./types";
-import { getUsers, addUser } from "./store";
+import path from "path";
+import fs from "fs";
+import router from "./routes";
+import { errorHandler } from "./middleware/errorHandler";
 
 const app = express();
 const PORT = 3003;
 
+// Create uploads directory if it doesn't exist
+const uploadsDir = path.join(__dirname, "..", "uploads");
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir, { recursive: true });
+}
+
+// Middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// List all users data111 7777
-app.get("/users", (req: Request, res: Response) => {
-  res.json(getUsers());
-  console.log("Listed all users data1");
-});
+// Serve uploaded files statically
+app.use("/uploads", express.static(uploadsDir));
 
-// Create a new user
-app.post("/users", (req: Request, res: Response) => {
-  const { name, email } = req.body;
-  if (!name || !email) {
-    res.status(400).send("Name and email are required");
-    return;
-  }
-  const newUser: User = {
-    id: Date.now().toString(),
-    name,
-    email,
-  };
-  addUser(newUser);
-  res.status(201).json({
-    appp: newUser,
+// API routes
+app.use("/api", router);
+
+// Health check
+app.get("/health", (req, res) => {
+  res.json({
+    success: true,
+    message: "Server is running",
+    timestamp: new Date().toISOString(),
   });
 });
 
+// Error handling middleware (must be last)
+app.use(errorHandler);
+
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`🚀 Server is running on http://localhost:${PORT}`);
+  console.log(`📁 Uploads directory: ${uploadsDir}`);
 });
