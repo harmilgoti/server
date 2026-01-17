@@ -8,7 +8,7 @@ export const getAllUsers = (req: Request, res: Response) => {
     res.json({
         success: true,
         data: {
-            user222ss2: users
+            app: users
         },
         count: users.length,
     });
