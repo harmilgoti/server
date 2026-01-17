@@ -29,7 +29,7 @@ app.post("/users", (req: Request, res: Response) => {
   };
   addUser(newUser);
   res.status(201).json({
-    data: newUser,
+    local: newUser,
   });
 });
 
