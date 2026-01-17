@@ -28,9 +28,7 @@ app.post("/users", (req: Request, res: Response) => {
     email,
   };
   addUser(newUser);
-  res.status(201).json({
-    add: newUser,
-  });
+  res.status(201).json(newUser);
 });
 
 app.listen(PORT, () => {
