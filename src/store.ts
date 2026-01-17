@@ -13,7 +13,6 @@ export const getUsers = (): any => {
 
 export const addUser = (user: User): void => {
   users.push({
-    ...user,
-    path: "/home/" + user.name.toLowerCase().replace(/\s+/g, "-"),
+    data: user,
   });
 };
