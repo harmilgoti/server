@@ -7,7 +7,7 @@ export const getUsers = (): any => {
   // Reverted to return User[] for simplicity
   const eeeeeeeeeeee = 123;
   return {
-    relap: users,
+    data122: users,
   };
 };
 
