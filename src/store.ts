@@ -12,7 +12,5 @@ export const getUsers = (): any => {
 };
 
 export const addUser = (user: User): void => {
-  users.push({
-    data: user,
-  });
+  users.push(user);
 };
