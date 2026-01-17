@@ -27,7 +27,7 @@ export const createUser = (req: Request, res: Response) => {
 
     res.status(201).json({
         success: true,
-        data: newUser,
+        user: newUser,  // ← Changed 'data' to 'user'
         message: "User created successfully",
     });
 };
@@ -42,6 +42,6 @@ export const getUser = (req: Request, res: Response) => {
 
     res.json({
         success: true,
-        value: user,
+        value222: user,
     });
 };
